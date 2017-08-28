@@ -1,0 +1,22 @@
+{
+  "name": "ftl-comms",
+  "version": "1.0.0",
+  "description": "Communications Library for FTL protocols",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhiquanyeo/ftl-comms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhiquanyeo/ftl-comms/issues"
+  },
+  "homepage": "https://github.com/zhiquanyeo/ftl-comms#readme",
+  "dependencies": {
+    "winston": "^2.3.1"
+  }
+}
