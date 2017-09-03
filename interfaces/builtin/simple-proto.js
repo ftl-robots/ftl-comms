@@ -34,6 +34,10 @@ class FTLSimpleProtocol extends ProtocolInterface {
 
             socket.on('end', () => {
                 this.d_clients.splice(this.d_clients.indexOf(socket), 1);
+                // Disable the robot when we have no clients
+                if (this.d_clients.length === 0) {
+                    this.emit('disableRobot');
+                }
             });
 
             socket.on('error', () => {
@@ -55,11 +59,11 @@ class FTLSimpleProtocol extends ProtocolInterface {
     }
 
     setAnalogInput(port, value) {
-        this.broadcast('A:' + channel + ':' + value.toString());
+        this._broadcast('A:' + port + ':' + value.toString());
     }
 
     setDigitalInput(port, value) {
-        this._broadcast('D:' + channel + ':' + (!!value ? '1':'0'));
+        this._broadcast('D:' + port + ':' + (!!value ? '1':'0'));
     }
 
     sendStatus(type, msg) {
